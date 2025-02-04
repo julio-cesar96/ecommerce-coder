@@ -1,42 +1,54 @@
-/* Estilos para o componente TodoList */
-
+/* Estilos gerais */
 .container {
   max-width: 400px;
   margin: 20px auto;
   padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  background-color: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
   text-align: center;
 }
 
 .title {
   font-size: 24px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+  font-weight: bold;
+  color: #333;
 }
 
+/* Input e botão adicionar */
 .input {
-  width: calc(100% - 22px);
-  padding: 8px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-bottom: 12px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+  transition: border 0.3s;
+}
+
+.input:focus {
+  border-color: #007bff;
 }
 
 .add-button {
-  padding: 8px 12px;
+  padding: 10px 16px;
   background-color: #28a745;
   color: white;
   border: none;
-  border-radius: 4px;
+  border-radius: 8px;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: background 0.3s, transform 0.2s;
+  font-size: 16px;
 }
 
 .add-button:hover {
   background-color: #218838;
+  transform: scale(1.05);
 }
 
+/* Lista de tarefas */
 .task-list {
   list-style: none;
   padding: 0;
@@ -46,38 +58,50 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 8px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  margin-top: 5px;
-  background-color: white;
-}
-
-.remove-button {
-  padding: 4px 8px;
-  background-color: #dc3545;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+  padding: 12px;
+  border-radius: 8px;
+  margin-top: 10px;
+  background-color: #f4f4f4;
   transition: background 0.3s;
 }
 
-.remove-button:hover {
-  background-color: #c82333;
+.task-item:hover {
+  background-color: #e8e8e8;
+}
+
+/* Estilizando tarefas concluídas */
+.completed span {
+  text-decoration: line-through;
+  color: #777;
+}
+
+/* Botões */
+.complete-button, .remove-button {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.3s, transform 0.2s;
 }
 
 .complete-button {
-  padding: 4px 8px;
   background-color: #007bff;
   color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background 0.3s;
-  margin-left: 5px;
 }
 
 .complete-button:hover {
   background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+.remove-button {
+  background-color: #dc3545;
+  color: white;
+  margin-left: 8px;
+}
+
+.remove-button:hover {
+  background-color: #c82333;
+  transform: scale(1.05);
 }
