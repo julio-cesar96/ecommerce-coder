@@ -1,22 +1,18 @@
-import { useRef, useEffect } from "react";
-
 import "./App.css";
 
-
 function App() {
-  const inputRef = useRef(null);
-
-  useEffect(() => {
-    if (inputRef.current) {
-      inputRef.current?.focus();
-    }
-  }, []);
+  const users = [
+    { id: 1, nome: 'Alice'},
+    { id: 2, nome: 'Julio'},
+    { id: 3, nome: 'Carla'}
+  ];
 
   return (
-   <div>
-      <h2> useRef para Manipular a DOM</h2>
-      <input ref={inputRef} type="text" placeholder="Digete alguma coisa..." />
-   </div>
+   <ul>
+    {users.map(user => (
+      <li key={user.id}> {user.nome} </li>
+    ))}
+   </ul>
   )
 }
 
