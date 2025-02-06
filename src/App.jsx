@@ -1,23 +1,18 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./components/Home/Home";
-import About from "./components/About/About";
-import NotFound from "./components/NotFound/NotFound"
 import "./App.css";
-import Navbar from "./components/Navbar/Navbar";
+import UserForm from "./components/UserForm/UserForm";
 
-function App() {
- 
+
+const App = () => {
+  const onConfirm = (data) => {
+    console.log("Dados registrados:", data);
+  };
 
   return (
-    <BrowserRouter>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-    </BrowserRouter>
+    <div>
+      <h2>Insira seus dados</h2>
+      <UserForm onConfirm={onConfirm} />
+    </div>
   );
-}
+};
 
 export default App;
